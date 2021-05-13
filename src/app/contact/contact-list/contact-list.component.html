@@ -1,0 +1,27 @@
+<app-page-title [pageData]='pageData'></app-page-title>
+
+<div class="pl-4 pr-4">
+  <div class="row">
+
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4" *ngFor="let contact of contactList; index as i">
+      <!-- Card-->
+      <div class="card shadow-sm border-0 rounded h-100">
+        <div class="card-body p-0">
+          <img src="https://res.cloudinary.com/mhmd/image/upload/v1570799922/profile-1_dewapk.jpg" alt="" class="w-100 card-img-top">
+          <div class="p-4">
+            <h5>{{contact.firstname}} {{contact.lastname}}</h5>
+            <p class="text-muted">{{contact.email}}</p>
+            <p class="text-muted">{{contact.phone}}</p>
+            <p class="text-muted">{{contact.status}}</p>
+            <button type="button" class="btn btn-primary mr-2" (click)="editContact(contact.id)">
+                Edit
+            </button>
+            <button type="button" class="btn btn-primary" (click)="deleteContact(contact.id)">
+                Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

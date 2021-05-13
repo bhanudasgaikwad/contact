@@ -1,0 +1,108 @@
+<app-page-title [pageData]='pageData'></app-page-title>
+
+<div class="container-fluid">
+    <form [formGroup]="editContactForm" (ngSubmit)="editContact(editContactForm.value)" novalidate>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="form-group">
+              <label for="name">Firstame</label>
+              <input type="text" formControlName="firstname" required minlength="4" class="form-control" placeholder="Enter your name">
+  
+              <div *ngIf="editContactForm.controls.firstname.invalid && (editContactForm.controls.firstname.dirty || editContactForm.controls.firstname.touched)"
+                class="alert alert-danger small">
+  
+                <p *ngIf="editContactForm.controls.firstname.errors.required">
+                  Firstame is required.
+                </p>
+  
+                <p *ngIf="editContactForm.controls.firstname.errors.minlength">
+                  Firstame must be at least 4 characters long.
+                </p>
+  
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="form-group mb-4">
+              <label for="lastname">Lastname</label>
+              <input type="text" formControlName="lastname" required minlength="4" class="form-control" placeholder="Enter your passsword">
+  
+              <div *ngIf="editContactForm.controls.lastname.invalid && (editContactForm.controls.lastname.dirty || editContactForm.controls.lastname.touched)"
+                class="alert alert-danger small">
+  
+                <p *ngIf="editContactForm.controls.lastname.errors.required">
+                  Lastname is required.
+                </p>
+  
+                <p *ngIf="editContactForm.controls.lastname.errors.minlength">
+                  Lastname must be at least 4 characters long.
+                </p>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="emailAddress">Email</label>
+          <input type="text" formControlName="emailAddress" required minlength="4" class="form-control" placeholder="Enter your passsword">
+  
+          <div *ngIf="editContactForm.controls.emailAddress.invalid && (editContactForm.controls.emailAddress.dirty || editContactForm.controls.emailAddress.touched)"
+            class="alert alert-danger small">
+  
+            <p *ngIf="editContactForm.controls.emailAddress.errors.required">
+              Email is required.
+            </p>
+  
+            <p *ngIf="editContactForm.controls.emailAddress.errors.minlength">
+              Email must be at least 4 characters long.
+            </p>
+  
+          </div>
+        </div>
+  
+        <div class="form-group mb-4">
+          <label for="phone">Phone</label>
+          <input type="number" formControlName="phone" required minlength="10" maxlength="10" class="form-control" placeholder="Enter your passsword">
+  
+          <div *ngIf="editContactForm.controls.phone.invalid && (editContactForm.controls.phone.dirty || editContactForm.controls.phone.touched)"
+            class="alert alert-danger small">
+  
+            <p *ngIf="editContactForm.controls.phone.errors.required">
+              Phone is required.
+            </p>
+  
+            <p *ngIf="editContactForm.controls.phone.errors.minlength">
+              Phone must be at least 4 characters long.
+            </p>
+  
+          </div>
+        </div>
+  
+        <div class="form-group mb-4">
+          <label for="lastname">Status</label>
+  
+          <select formControlName="status" required minlength="4" class="form-control">
+              <option>Select Status</option>
+              <option>Active</option>
+              <option>Inactive</option>
+            </select>
+  
+          <div *ngIf="editContactForm.controls.status.invalid && (editContactForm.controls.status.dirty || editContactForm.controls.status.touched)"
+            class="alert alert-danger small">
+  
+            <p *ngIf="editContactForm.controls.status.errors.required">
+              Status is required.
+            </p>
+  
+            <p *ngIf="editContactForm.controls.status.errors.minlength">
+              Status must be at least 4 characters long.
+            </p>
+          </div>
+        </div>
+        
+        <button type="submit" [disabled]="!editContactForm.valid" name="edit" class="btn btn-primary">
+            Save
+        </button>
+    </form>
+</div>

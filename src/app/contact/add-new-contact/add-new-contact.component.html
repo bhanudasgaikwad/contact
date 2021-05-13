@@ -1,0 +1,110 @@
+<app-page-title [pageData]='pageData'></app-page-title>
+
+<div class="container-fluid">
+  <form [formGroup]="addNewContactForm" (ngSubmit)="addNewContact(addNewContactForm.value)" novalidate>
+  
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="form-group">
+            <label for="name">Firstame</label>
+            <input type="text" formControlName="firstname" required minlength="4" class="form-control" placeholder="Enter your name">
+
+            <div *ngIf="addNewContactForm.controls.firstname.invalid && (addNewContactForm.controls.firstname.dirty || addNewContactForm.controls.firstname.touched)"
+              class="alert alert-danger small">
+
+              <p *ngIf="addNewContactForm.controls.firstname.errors.required">
+                Firstame is required.
+              </p>
+
+              <p *ngIf="addNewContactForm.controls.firstname.errors.minlength">
+                Firstame must be at least 4 characters long.
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="form-group mb-4">
+            <label for="lastname">Lastname</label>
+            <input type="text" formControlName="lastname" required minlength="4" class="form-control" placeholder="Enter your passsword">
+
+            <div *ngIf="addNewContactForm.controls.lastname.invalid && (addNewContactForm.controls.lastname.dirty || addNewContactForm.controls.lastname.touched)"
+              class="alert alert-danger small">
+
+              <p *ngIf="addNewContactForm.controls.lastname.errors.required">
+                Lastname is required.
+              </p>
+
+              <p *ngIf="addNewContactForm.controls.lastname.errors.minlength">
+                Lastname must be at least 4 characters long.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="emailAddress">Email</label>
+        <input type="text" formControlName="emailAddress" required minlength="4" class="form-control" placeholder="Enter your passsword">
+
+        <div *ngIf="addNewContactForm.controls.emailAddress.invalid && (addNewContactForm.controls.emailAddress.dirty || addNewContactForm.controls.emailAddress.touched)"
+          class="alert alert-danger small">
+
+          <p *ngIf="addNewContactForm.controls.emailAddress.errors.required">
+            Email is required.
+          </p>
+
+          <p *ngIf="addNewContactForm.controls.emailAddress.errors.minlength">
+            Email must be at least 4 characters long.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="phone">Phone</label>
+        <input type="number" formControlName="phone" required minlength="10" maxlength="10" class="form-control" placeholder="Enter your passsword">
+
+        <div *ngIf="addNewContactForm.controls.phone.invalid && (addNewContactForm.controls.phone.dirty || addNewContactForm.controls.phone.touched)"
+          class="alert alert-danger small">
+
+          <p *ngIf="addNewContactForm.controls.phone.errors.required">
+            Phone is required.
+          </p>
+
+          <p *ngIf="addNewContactForm.controls.phone.errors.minlength">
+            Phone must be at least 4 characters long.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="lastname">Status</label>
+
+        <select formControlName="status" required minlength="4" class="form-control">
+            <option>Select Status</option>
+            <option>Active</option>
+            <option>Inactive</option>
+          </select>
+
+        <div *ngIf="addNewContactForm.controls.status.invalid && (addNewContactForm.controls.status.dirty || addNewContactForm.controls.status.touched)"
+          class="alert alert-danger small">
+
+          <p *ngIf="addNewContactForm.controls.status.errors.required">
+            Status is required.
+          </p>
+
+          <p *ngIf="addNewContactForm.controls.status.errors.minlength">
+            Status must be at least 4 characters long.
+          </p>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="!addNewContactForm.valid" name="add" class="btn btn-primary">
+        Save
+      </button>
+  </form>
+</div>

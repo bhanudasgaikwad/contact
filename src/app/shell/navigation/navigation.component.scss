@@ -1,0 +1,18 @@
+@import './src/common-styling/variable';
+
+.navbar-nav .nav-item {
+    &.active .nav-link {
+        background-color: rgba(0,0,0,0.3)
+    }
+
+    .nav-link {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        color: $white;
+
+        &:hover,
+        &:focus {
+            background-color: rgba(0,0,0,0.3)
+        }
+    }
+}

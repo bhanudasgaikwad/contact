@@ -1,0 +1,61 @@
+<div class="container-fluid signin-container">
+  <div class="row">
+    <div class="col-lg-6 col-sm-6 col-xs-6">
+      <div class="signin-section">
+        <div class="brand-wrapper mb-4">
+          <h1 class="brand">iConnect</h1>
+        </div>
+
+        <div class="signin-wrapper">
+          <h2 class="signin-title mb-4">Login to your account</h2>
+          <form [formGroup]="signInForm" (ngSubmit)="validateUserDetails()" novalidate>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" formControlName="emailAddress" required minlength="4" class="form-control" placeholder="Enter your email address">
+
+              <div *ngIf="signInForm.controls.emailAddress.invalid && (signInForm.controls.emailAddress.dirty || signInForm.controls.emailAddress.touched)"
+                class="alert alert-danger small">
+                
+                <p *ngIf="signInForm.controls.emailAddress.errors.required">
+                  Name is required.
+                </p>
+
+                <p *ngIf="signInForm.controls.emailAddress.errors.minlength">
+                  Name must be at least 4 characters long.
+                </p>
+
+              </div>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="password">Password</label>
+              <input type="password" formControlName="password" required minlength="4" class="form-control" placeholder="Enter your passsword">
+
+              <div *ngIf="signInForm.controls.password.invalid && (signInForm.controls.password.dirty || signInForm.controls.password.touched)"
+                class="alert alert-danger small">
+
+                <p *ngIf="signInForm.controls.password.errors.required">
+                  Name is required.
+                </p>
+
+                <p *ngIf="signInForm.controls.password.errors.minlength">
+                  Name must be at least 4 characters long.
+                </p>
+
+              </div>
+            </div>
+
+            <button type="submit" [disabled]="!signInForm.valid" name="login" class="btn rounded-0 btn-block btn-primary mb-3">
+                Submit
+            </button>
+          </form>
+
+          <a (click)="gotoPasswordPage()" class="btn-link forgot-password-link">Forgot password?</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-6 col-xs-6 signin-image">
+      <!-- image will add with scss -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='address'],
+select,
+select.form-control {
+    border: none;
+    border-bottom: 2px solid $grey;
+    border-radius: 0;
+    padding: .75rem 0.25rem;
+    font-size: 1rem;
+    font-weight: normal;
+    color: $grey;
+
+    &:focus {
+        border-color: $indigo;
+        color: $black;
+    }
+
+    &.ng-invalid.ng-touched {
+        border-color: #f5c6cb;
+        color: #721c24;
+    }
+}

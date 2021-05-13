@@ -1,0 +1,66 @@
+[
+    {
+        "id" : "1",
+        "firstname": "Peter",
+        "lastname": "Doe",
+        "email": "peter@gmail.com",
+        "phone": "9192929462",
+        "status": "active"
+    },
+    {
+        "id" : "2",
+        "firstname": "Michael",
+        "lastname": "Jo",
+        "email": "michael@gmail.com",
+        "phone": "9192929462",
+        "status": "false"
+    },
+    {
+        "id" : "3",
+        "firstname": "Mike",
+        "lastname": "Chris",
+        "email": "peter@iconnect.com",
+        "phone": "9192929462",
+        "status": "active"
+    },
+    {
+        "id" : "4",
+        "firstname": "Peter",
+        "lastname": "Doe",
+        "email": "micke@iconnect.com",
+        "phone": "9192929462",
+        "status": "inactive"
+    },
+    {
+        "id" : "5",
+        "firstname": "Peter",
+        "lastname": "Doe",
+        "email": "peter@gmail.com",
+        "phone": 9192929462,
+        "status": "active"
+    },
+    {
+        "id" : "6",
+        "firstname": "Vivek",
+        "lastname": "N",
+        "email": "vivek.n@gmail.com",
+        "phone": 9192929462,
+        "status": ""
+    },
+    {
+        "id" : "7",
+        "firstname": "Robert",
+        "lastname": "H",
+        "email": "robert@iconnect.com",
+        "phone": 9192929462,
+        "status": "active"
+    },
+    {
+        "id" : "8",
+        "firstname": "Sujal",
+        "lastname": "V",
+        "email": "sijay@gmail.com",
+        "phone": 9192929462,
+        "status": "active"
+    }
+]

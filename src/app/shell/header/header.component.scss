@@ -1,0 +1,16 @@
+@import './src/common-styling/variable';
+
+.navbar-brand {
+    color: $white;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.navbar {
+    padding-top :0;
+    padding-bottom: 0;
+}
+
+.bg-primary {
+    background-color: $indigo !important;
+}
